@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -403,3 +404,410 @@
   </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kota Kundan Sai | Portfolio</title>
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      padding-bottom: 3rem;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.3rem;
+      letter-spacing: 2px;
+      cursor: default;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    header h1:hover {
+      transform: scale(1.05);
+      color: #00bfa5;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s, transform 0.3s ease;
+      display: inline-block;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: #00bfa5;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    nav a:hover {
+      color: #00bfa5;
+      transform: scale(1.1);
+    }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+    }
+
+    section {
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+      transition: box-shadow 0.3s ease;
+    }
+    section:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #222;
+      border-bottom: 3px solid #00bfa5;
+      display: inline-block;
+      padding-bottom: 5px;
+      cursor: default;
+      transition: color 0.4s ease;
+    }
+    h2:hover {
+      color: #00796b;
+    }
+
+    h3 {
+      margin-top: 2rem;
+      color: #00796b;
+      cursor: default;
+      transition: color 0.3s ease;
+    }
+    h3:hover {
+      color: #004d40;
+    }
+
+    p, li {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+      color: #555;
+    }
+
+    strong {
+      color: #222;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #444;
+    }
+
+    .project-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 2rem;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .project-image {
+      width: 100%;
+      max-width: 100px;
+      border-radius: 10px;
+      transition: transform 0.4s ease;
+      display: block;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+    .project-image:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 5px #00bfa5);
+    }
+
+    a {
+      color: #00796b;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #004d40;
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      letter-spacing: 1px;
+      user-select: none;
+    }
+
+    /* Back to top button */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #00bfa5;
+      color: white;
+      border: none;
+      padding: 0.75rem 1rem;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 191, 165, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 1500;
+      user-select: none;
+    }
+    #backToTop.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+
+      section {
+        margin: 1.5rem;
+        padding: 2rem 1rem;
+      }
+
+      .project-image {
+        max-width: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header data-aos="fade-down" data-aos-duration="1000">
+    <h1>Kota Kundan Sai</h1>
+    <p>Full Stack Developer | Designer</p>
+    <nav>
+      <a href="#about" data-aos="fade-right" data-aos-delay="100">About</a>
+      <a href="#resume" data-aos="fade-right" data-aos-delay="200">Resume</a>
+      <a href="#projects" data-aos="fade-right" data-aos-delay="300">Projects</a>
+      <a href="#contact" data-aos="fade-right" data-aos-delay="400">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about" data-aos="fade-up" data-aos-duration="900" data-aos-offset="200">
+    <h2>About Me</h2>
+    <p>
+      Hi! I'm <strong>Kota Kundan Sai</strong>, a passionate Full Stack Developer and Designer with a aim for creating clean, interactive, and user-friendly websites and applications. With solid foundation in both front-end and back-end technologies, I enjoy transforming ideas into efficient solutions.
+    </p>
+    <p>
+      I am proficient in HTML, CSS, JavaScript, React, Java Servlets, Python ,and Database management (Oracle database, MySQL, MongoDB), combined with a strong understanding of UI/UX principles. I like to work in collaborative environments where I can continuously learn, solve challenging problems, and contribute to real-time projects.
+    </p>
+    <p>
+      Beyond coding, I am a problem solver who enjoys solving complex technical challenges and optimizing workflows. I am always eager to explore new technologies and methodologies to improve the products I build.
+    </p>
+    <p>
+      Other than coding, I love reading about the latest tech trends and watching cricket.
+    </p>
+  </section>
+
+  <section id="resume" data-aos="fade-up" data-aos-duration="900" data-aos-offset="200">
+    <h2>Resume</h2>
+
+    <h3>Career Objective</h3>
+    <p>
+      A B-Tech Information Technology undergraduate aspiring to become a Quality Assurance Engineer with a passion for delivering high-quality, reliable software. Mainly focused on creating fast, efficient, and user-friendly websites. Enjoy solving problems whether it's improving backend performance or making frontend look and feel better. Always eager to learn new technologies.
+    </p>
+
+    <h3>Technical Skills</h3>
+    <ul>
+      <li><strong>Programming Languages:</strong> HTML, CSS, JavaScript, Java, C, C#, Python, React.js</li>
+      <li><strong>Databases:</strong> SQL Plus, MySQL, MongoDB</li>
+      <li><strong>Operating Systems:</strong> Linux, Windows</li>
+      <li><strong>Tools:</strong> VS Code, Eclipse, Jupyter Notebook</li>
+    </ul>
+
+    <h3>Education</h3>
+    <ul>
+      <li><strong>Bachelor of Technology – Information Technology</strong> (2022–2026)<br>Vasireddy Venkatadri Institute of Technology, Guntur | CGPA: 8.6/10</li>
+      <li><strong>Intermediate</strong> (2020–2022)<br>Bhashyam Junior College, Guntur | CGPA: 90%</li>
+      <li><strong>Secondary School Certificate (SSC)</strong> (2019–2020)<br>Bhashyam High School | GPA: 10</li>
+    </ul>
+
+    <h3>Certifications</h3>
+    <ul>
+      <li>Java Programming — NPTEL (Swayam)</li>
+      <li>AI/ML Virtual Internship — Google</li>
+      <li>Java Fundamentals — Infosys Springboard</li>
+      <li>Fundamentals in C# — Microsoft</li>
+    </ul>
+
+    <h3>Projects</h3>
+    <ul>
+      <li>
+        <strong>Edu Website</strong> (Currently working)<br>
+        A community-driven platform providing education to people lacking formal access by connecting volunteers and organizations. Built with full-stack development and AI/ML, tracking volunteer efforts and implementing a reward system to promote engagement.
+      </li>
+      <li>
+        <strong>Job Search Portal</strong><br>
+        A web-based platform connecting employers and job seekers for non-technical contract-based jobs. Built using HTML, CSS, JavaScript, Servlets, and Oracle SQL. Features job listings, application management, and secure user authentication.
+      </li>
+    </ul>
+
+    <h3>Achievements & Activities</h3>
+    <ul>
+      <li>Received a free scholarship for college by government through the EAMCET examination.</li>
+      <li>Earned the Elite badge in the NPTEL Programming in Java exam, showcasing advanced proficiency in Java programming.</li>
+      <li>Member of ACM and organized various events.</li>
+    </ul>
+  </section>
+
+
+<section id="certificates" data-aos="fade-up" data-aos-duration="900" data-aos-offset="200">
+  <h2>Certificates</h2>
+  <ul>
+<li><a href="Programming In Java.pdf" target="_blank">Java Programming – NPTEL (PDF)</a></li>
+<li><a href="java Infosys.pdf" target="_blank">Java – Infosys (PDF)</a></li>
+<li><a href="Dbms.pdf" target="_blank">DBMS – Infosys (PDF)</a></li>
+<li><a href="html.pdf" target="_blank">HTML – Simplilearn (PDF)</a></li>
+<li><a href="full stack.pdf" target="_blank">Full Stack – Simplilearn (PDF)</a></li>
+<li><a href="Csharp.jpg" target="_blank">C# Fundamentals – Microsoft (Image)</a></li>
+  </ul>
+</section>
+
+  <section id="projects" data-aos="fade-up" data-aos-duration="900" data-aos-offset="200">
+    <h2>Projects</h2>
+
+    <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+      <h3>Part Time Job Search Portal</h3>
+      <p>I have created a website especially for non tech employees in order to search jobs with ease and user friendly design.I have used front-end technologies like HTML,CSS,JavaScript and used Java Servlets for back-end and used Oracle database for storing data and retrieving it.I have used tomcat server for hosting the project in local server.Ensured every aspect has been covered in the website for easy access.</p>
+<img src="part-time.png" alt="Project 1" class="project-image" />
+<a href="https://github.com/Kundan-Sai9/part-time-job-search" target="_blank" rel="noopener noreferrer" class="project-link">View Code on GitHub</a>
+    </div>
+
+    <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+      <h3>Snake Game</h3>
+      <p>I have created a basic snake game where the goal of the player is to increase the size of the snake by eating fruits without being hit to self.I have mostly used JavaScript for the front-end technology.I have ensured that the fruit is generated randomly in the grid with the help of random function and i have removed the borders such that snake going through the border comes out from the opposite end.</p>
+      <img src="snake.png" alt="Project 2" class="project-image" />
+<a href="http://github.com/Kundan-Sai9/Snakegame" target="_blank" rel="noopener noreferrer" class="project-link">View Code on GitHub</a>
+    </div>
+  </section>
+
+  <section id="contact" data-aos="fade-up" data-aos-duration="900" data-aos-offset="200">
+  <h2>Contact</h2>
+  <p>Phone: <a href="tel:+918985214179" style="color:#00bfa5; text-decoration:none;">+91 89852 14179</a></p>
+  <p>Email: <a href="mailto:kundansai96@gmail.com" style="color:#00bfa5; text-decoration:none;">kundansai96@gmail.com</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/kundan-sai-46110726a/" target="_blank" rel="noopener noreferrer" style="color:#00bfa5; text-decoration:none;">Profile</a></p>
+  <p>GitHub: <a href="https://github.com/Kundan-Sai9?tab=repositories" target="_blank" rel="noopener noreferrer" style="color:#00bfa5; text-decoration:none;">Projects</a></p>
+</section>
+
+
+  <footer>
+    <p>&copy; 2025 Kota Kundan Sai</p>
+  </footer>
+
+  <button id="backToTop" aria-label="Back to Top">↑</button>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      easing: 'ease-out-cubic',
+      duration: 800,
+    });
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Optional: add smooth scroll for nav (native scroll-behavior is enabled)
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').slice(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+>>>>>>> 12ee29d1378964d909b05fae62269a301ad4fe89
